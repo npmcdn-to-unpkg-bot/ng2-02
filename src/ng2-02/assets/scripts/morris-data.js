@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
 
     Morris.Line({
         element: 'morris-area-chart',
@@ -39,16 +39,14 @@ $(function() {
 
     Morris.Donut({
         element: 'morris-donut-chart',
-        data: [{
-            label: "Download Sales",
-            value: 12
-        }, {
-            label: "In-Store Sales",
-            value: 30
-        }, {
-            label: "Mail-Order Sales",
-            value: 20
-        }],
-        resize: true
+        data: [
+            { label: "Xrm Handler", value: 769 },
+            { label: "Navision Handler", value: 340 },
+            { label: "SharePoint Handler", value: 460 },
+            { label: "Publications Handler", value: 234 },
+            { label: "Mail Handler", value: 127 }
+        ],
+        resize: true,
+        colors: ['red', 'green', 'yellow', 'blue', 'orange']
     });
 });
