@@ -89,6 +89,7 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">Dashboard</h1>
                 </div>
+                <rabbitmonitor-app>Loading...</rabbitmonitor-app>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
@@ -513,25 +514,17 @@ Related RefCode: PL1750469
     <!-- Custom Theme JavaScript -->
     <script src="scripts/sb-admin-2.js"></script>
 
-    <script src="scripts/es6-shim.min.js"></script>
-    <script src="scripts/es6-promise.min.js"></script>
-    <script src="scripts/system-polyfills.src.js"></script>
-    <script src="scripts/angular2-polyfills.min.js"></script>
-    <script src="scripts/system.src.js"></script>
-    <script src="scripts/rx.min.js"></script>
-    <script src="scripts/angular2.min.js"></script>
-    <script src="scripts/router.min.js"></script>
-    <script src="scripts/http.min.js"></script>
+    <script src="libs/es6-shim/es6-shim.min.js"></script>
+    <script src="libs/zone.js/dist/zone.js"></script>
+    <script src="libs/reflect-metadata/Reflect.js"></script>
+    <script src="libs/systemjs/dist/system.src.js"></script>
 
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
     <script>
-        System.config({
-            packages: {
-                'app': { defaultExtension: 'js' },
-                'lib': { defaultExtension: 'js' },
-            }
-        });
 
-        System.import('app/boot').then(null, console.error.bind(console));
+        System.import('app/boot')
+              .then(console.debug('app started'), console.error.bind(console));
     </script>
 </body>
 </html>
